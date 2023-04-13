@@ -96,7 +96,9 @@ form {
   font-weight: bolder;
   cursor: pointer;
   font-size: 20px;
-  margin-left: 23px;
+  /* margin-left: 1px; */
+  padding: 5px 0;
+  border: none;
 }
 
 #additional {

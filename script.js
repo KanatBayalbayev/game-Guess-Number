@@ -8,17 +8,30 @@ const checkBtn = document.querySelector("#checkBtn");
 const newGameBtn = document.querySelector("#newGameBtn");
 
 let randomNumber = Math.round(Math.random() * 20) + 1;
-console.log(randomNumber);
 
 let scores = 0;
 let lives = 3;
 
+newGameBtn.disabled = true;
+newGameBtn.addEventListener("click", () => {
+  location.reload();
+});
 
+score.textContent = "Scores: " + String(localStorage.getItem("scores"));
+var re = new RegExp("Scores: null");
+if (re.test(score.textContent)) {
+  score.textContent = "Scores: 0";
+}
+scores = +localStorage.getItem("scores");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   score.textContent = "Scores: 0";
   const value = +input.value;
+  if (input.value === "") {
+    result.innerText = "Print Your Guess";
+    return;
+  }
   if (value === randomNumber) {
     scores = scores + 1;
     localStorage.setItem("scores", scores);
@@ -34,6 +47,7 @@ form.addEventListener("submit", (e) => {
     result.innerText = "Your guess is too low 😬";
   }
   if (value > randomNumber || value < randomNumber) {
+    score.textContent = "Scores: " + String(localStorage.getItem("scores"));
     lives--;
     if (lives == 2) {
       livesDisplay.innerHTML = `Chances: 💖💖`;
@@ -48,15 +62,3 @@ form.addEventListener("submit", (e) => {
     }
   }
 });
-newGameBtn.addEventListener("click", () => {
-  location.reload();
-});
-
-newGameBtn.disabled = true;
-
-score.textContent = "Scores:  " + String(localStorage.getItem("scores"));
-
-console.log(score.textContent);
-scores = +localStorage.getItem("scores");
-
-console.log(typeof null);
