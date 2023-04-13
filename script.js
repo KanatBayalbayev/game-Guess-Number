@@ -8,7 +8,7 @@ const checkBtn = document.querySelector("#checkBtn");
 const newGameBtn = document.querySelector("#newGameBtn");
 
 let randomNumber = Math.round(Math.random() * 20) + 1;
-
+console.log(randomNumber);
 let scores = 0;
 let lives = 3;
 
@@ -18,7 +18,7 @@ newGameBtn.addEventListener("click", () => {
 });
 
 score.textContent = "Scores: " + String(localStorage.getItem("scores"));
-var re = new RegExp("Scores: null");
+let re = new RegExp("Scores: null");
 if (re.test(score.textContent)) {
   score.textContent = "Scores: 0";
 }
@@ -48,6 +48,12 @@ form.addEventListener("submit", (e) => {
   }
   if (value > randomNumber || value < randomNumber) {
     score.textContent = "Scores: " + String(localStorage.getItem("scores"));
+    let re = new RegExp("Scores: null");
+    if (re.test(score.textContent)) {
+      score.textContent = "Scores: 0";
+    }
+    scores = +localStorage.getItem("scores");
+
     lives--;
     if (lives == 2) {
       livesDisplay.innerHTML = `Chances: 💖💖`;
@@ -58,6 +64,7 @@ form.addEventListener("submit", (e) => {
       guessedNumber.innerText = "😕";
       newGameBtn.disabled = false;
       checkBtn.disabled = true;
+      input.disabled = true;
       livesDisplay.innerText = "No more chances 🤷‍♂️";
     }
   }
