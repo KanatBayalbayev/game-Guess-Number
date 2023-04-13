@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="name">Guess a Number Between 1-20</h1>
+      <h1 id="result">😎</h1>
+      <h1 id="guessedNumber">👉 ??? 👈</h1>
+      <div id="form-container">
+        <form>
+          <input type="text" id="input" maxlength="2" autocomplete="off"/>
+
+          <input type="submit" value="Check" id="checkBtn" />
+        </form>
+        <span id="newGameBtn">New Game</span>
+      </div>
+
+      <div id="additional">
+        <h1 id="lives">Chances: 💖💖💖</h1>
+        <h1 id="score">0</h1>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

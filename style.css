@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(16, 145, 59);
+  background: linear-gradient(
+    90deg,
+    rgba(16, 145, 59, 0.7008928571428572) 39%,
+    rgba(255, 175, 0, 1) 100%
+  );
+}
+
+.container {
+  border: 1px solid gray;
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* From https://css.glass
+  background: rgba(255, 255, 255, 0.43);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.2px);
+  -webkit-backdrop-filter: blur(7.2px);
+  border: 1px solid rgba(255, 255, 255, 0.3); */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+#name {
+  color: orangered;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#result {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#guessedNumber {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#input {
+  width: 50px;
+  height: 35px;
+  padding: 10px 11px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 46px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+#checkBtn {
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 10px 40px;
+  color: white;
+  background-color: orangered;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+#newGameBtn {
+  margin-bottom: 20px;
+  color: orangered;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 23px;
+}
+
+#additional {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+#lives {
+  margin-bottom: 10px;
+}
